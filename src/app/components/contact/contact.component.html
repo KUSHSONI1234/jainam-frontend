@@ -1,0 +1,81 @@
+<h1 class="contact-title" data-aos="fade-up">What else do you need? Let's connect!</h1>
+<h3 class="contact-sub-title" data-aos="fade-down">I'd Love To Hear From You.</h3>
+
+<div class="contact-section">
+    <div class="contact-left" data-aos="fade-right">
+        <img src="images/contact.png" alt="Contact Image">
+    </div>
+    <div class="contact-right" data-aos="fade-left">
+        <div class="contact-form-container">
+            <h1>Contact Us</h1>
+
+            <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+              
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input 
+                  type="text" id="name" name="name" [(ngModel)]="formData.name" 
+                  required minlength="3" maxlength="50" #name="ngModel" 
+                  placeholder="Enter your name"
+                />
+                <div class="error" *ngIf="name.invalid && name.touched">
+                  Name is required (Min: 3, Max: 50 chars)
+                </div>
+              </div>
+          
+              <!-- Email Address -->
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                  type="email" id="email" name="email" [(ngModel)]="formData.email"
+                  required #email="ngModel" placeholder="Enter your email"
+                />
+                <div class="error" *ngIf="email.invalid && email.touched">
+                  Enter a valid email (e.g. example.com)
+                </div>
+              </div>
+          
+              <!-- Phone Number -->
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input 
+                  type="text" id="phone" name="phone" [(ngModel)]="formData.phone"
+                  required pattern="^[0-9]{10}$" #phone="ngModel" placeholder="Enter your phone number"
+                />
+                <div class="error" *ngIf="phone.invalid && phone.touched">
+                  Enter a valid 10-digit phone number
+                </div>
+              </div>
+          
+              <!-- Subject -->
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input 
+                  type="text" id="subject" name="subject" [(ngModel)]="formData.subject"
+                  required minlength="5" maxlength="100" #subject="ngModel" placeholder="Enter subject"
+                />
+                <div class="error" *ngIf="subject.invalid && subject.touched">
+                  Subject is required (Min: 5, Max: 100 chars)
+                </div>
+              </div>
+          
+              <!-- Message -->
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea 
+                  id="message" name="message" [(ngModel)]="formData.message"
+                  required minlength="10" maxlength="500" #message="ngModel" placeholder="Enter your message"
+                ></textarea>
+                <div class="error" *ngIf="message.invalid && message.touched">
+                  Message is required (Min: 10, Max: 500 chars)
+                </div>
+              </div>
+          
+              <!-- Submit Button -->
+              <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

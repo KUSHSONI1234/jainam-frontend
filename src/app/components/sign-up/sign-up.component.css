@@ -1,0 +1,93 @@
+.signup-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 20px;
+    box-shadow: 0 3px 4px 3px rgba(14, 201, 172, 0.459);
+    text-align: center;
+}
+
+.signup-container h1 {
+    background-image: linear-gradient(135deg, #08AEEA 15%, #2AF598 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 1rem 0 2rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #000;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+}
+
+.password-policy p {
+    font-size: 12px;
+    margin: 2px 0;
+    color: red;
+}
+
+.password-policy .valid {
+    color: limegreen;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-image: linear-gradient(135deg, #08AEEA 15%, #2AF598 100%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2AF598 15%, #08AEEA 100%);
+    color: black;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

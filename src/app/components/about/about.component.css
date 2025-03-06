@@ -1,0 +1,22 @@
+.about-section{
+    /* background-color: aquamarine; */
+    color: #0EC9AC;
+    padding: 0 8%;
+    text-align: center;
+    height: auto;
+    margin-top: 2%;
+}
+.about-section h3{
+    color: white;
+    margin-top: 2rem;
+    font-size: 20px;
+}
+.about-section p{
+    /* margin-top: 1rem; */
+    text-align: justify;
+    font-size: 18px;
+    max-width: 80%;
+    line-height: 1.4;
+    margin: 1.5rem auto 0;
+    color: white;
+}

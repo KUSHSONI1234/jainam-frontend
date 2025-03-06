@@ -1,0 +1,85 @@
+.about-section
+{
+    height: auto;
+    padding: 0 10%;
+}
+.about-section h1{
+    color: #0EC9AC;
+    text-align: center;
+    margin: 3% 0;
+}
+.about-section h3{
+    color: white;
+    text-align: center;
+}
+.about-section p{
+    max-width: 80%;
+    font-size: 18px;
+    margin: 2% auto;
+    text-align: justify;
+}
+
+.data-extraction-section{
+    margin: 4% 0;
+    /* background-color: #0EC9AC; */
+    height: auto;
+    width: 100%;
+}
+
+.extract-flex{
+    justify-content: space-around;
+    /* order: 1000; */
+    align-items: center;
+    margin-top: 5%;
+    display: flex;
+    /* flex-direction: row; */
+    
+}
+.extract-flex img{
+    width: 500px;
+    height: auto;
+    order: 5;
+}
+.extract-flex p{
+    max-width: 600px;
+    order: 10;
+}
+.extract-right h1{
+    color: #0EC9AC;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 100%;
+    /* background-color:#138808; */
+}
+.extract-right p{
+    font-size: 18px;
+    line-height: 1.4;
+}
+.extract-right .extracted-heading{
+    color: white;
+    margin-top: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.extract-right li{
+    margin: 10px 0;
+    color: white;
+    list-style: disc;
+}
+.extract-feature
+{
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #66fcf1;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #c5c6c7;
+}

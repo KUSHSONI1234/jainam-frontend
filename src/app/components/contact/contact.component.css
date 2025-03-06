@@ -1,0 +1,130 @@
+.contact-form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  /* background: #f8f9fa; */
+  border-radius: 10px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  background-color: #000;
+    box-shadow: 0 3px 4px 3px rgba(14, 201, 172, 0.459);
+    /* box-shadow: 0 2px 2px 1px ; */
+    transition: all 1sease-in-out 4s;
+    border-radius: 20px;
+  /* box-shadow: 0 3px 4px 3px rgba(119,53,136,.459); */
+}
+.contact-form-container:hover{
+  border: 1px solid rgba(14, 201, 172, 0.459);
+  box-shadow: 0 3px 4px 5px rgba(14, 201, 172, 0.459);
+
+}
+.contact-form-container h1{
+  /* color: #00B298; */
+  background-color: #08AEEA;
+  background-image: linear-gradient(135deg, #08AEEA 15%, #2AF598 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #000;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-image: linear-gradient(135deg, #08AEEA 15%, #2AF598 100%);
+  color: white !important; /* Ensure the text color is white */
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2AF598 15%, #08AEEA 100%);
+  color: black !important; /* Change text color on hover */
+  border: 1px solid white;
+}
+
+
+button:disabled {
+  /* background: #ccc; */
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+.contact-title {
+  padding: 0 8%;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 500;
+  margin: 2rem 0;
+  background-color: #08AEEA;
+  background-image: linear-gradient(135deg, #08AEEA 15%, #2AF598 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-sub-title {
+  padding: 0 8%;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 500;
+  color: #54c6b5;
+}
+.contact-section{
+  padding: 0 9%;
+  display: flex;
+  margin: 4rem 0;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* background-color: #08AEEA; */
+}
+.contact-section .contact-left{
+  width: 50%;
+  /* background-color: #007bff; */
+}
+.contact-left img{
+  width: 100%;
+  height: auto;
+}
+.contact-right{
+  width: 45%;
+  /* background-color: #2AF598; */
+}
+
+

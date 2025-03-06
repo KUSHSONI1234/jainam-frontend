@@ -1,0 +1,62 @@
+<div class="signup-container">
+    <h1>Sign Up</h1>
+    <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+      
+        <!-- First Name -->
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" [(ngModel)]="formData.firstName" required minlength="2" placeholder="Enter your first name">
+        </div>
+
+        <!-- Last Name -->
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" [(ngModel)]="formData.lastName" required minlength="2" placeholder="Enter your last name">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="formData.email" required placeholder="Enter your email">
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+                <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password" 
+                    [(ngModel)]="formData.password" required (input)="onPasswordInput()" placeholder="Enter password">
+                <span class="toggle-password" (click)="showPassword = !showPassword">
+                    <i class="fa-regular {{ showPassword ? 'fa-eye-slash' : 'fa-eye' }}"></i>
+                </span>
+            </div>
+            <div class="password-policy">
+                <p [class.valid]="passwordValidations.minLength">✔ Minimum 8 characters</p>
+                <p [class.valid]="passwordValidations.hasUppercase">✔ At least one uppercase letter</p>
+                <p [class.valid]="passwordValidations.hasLowercase">✔ At least one lowercase letter</p>
+                <p [class.valid]="passwordValidations.hasNumber">✔ At least one number</p>
+                <p [class.valid]="passwordValidations.hasSpecialChar">✔ At least one special character</p>
+            </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="password-wrapper">
+                <input type="{{ showConfirmPassword ? 'text' : 'password' }}" id="confirmPassword" name="confirmPassword" 
+                    [(ngModel)]="formData.confirmPassword" required placeholder="Confirm password">
+                <span class="toggle-password" (click)="showConfirmPassword = !showConfirmPassword">
+                    <i class="fa-regular {{ showConfirmPassword ? 'fa-eye-slash' : 'fa-eye' }}"></i>
+                </span>
+            </div>
+            <p class="error" *ngIf="formData.password && formData.confirmPassword && formData.password !== formData.confirmPassword">
+                ❌ Passwords do not match
+            </p>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+    </form>
+</div>
+
+<app-footer></app-footer>

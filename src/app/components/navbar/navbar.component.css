@@ -1,0 +1,80 @@
+.navbar {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    padding: 0 8%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left p {
+    text-align: center;
+    color: whitesmoke;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.logo {
+    font-size: 40px;
+    background: linear-gradient(90deg, #FF9933 30%, #ffffff 60%, #138808 10%);
+    letter-spacing: 2px;
+    cursor: pointer;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+nav {
+    width: 50%;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+/* Default Link Style */
+nav ul li a {
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    color: #0EC9AC;
+}
+
+/* Hover Underline Effect */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #0EC9AC;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Active Link (Highlight the current page) */
+nav ul li a.active {
+    color: #0EC9AC !important;
+    /* font-weight: bold; */
+}
