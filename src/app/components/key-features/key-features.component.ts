@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import AOS from 'aos';
+import AOS from 'aos'
 import 'aos/dist/aos.css'; 
 
 @Component({
