@@ -51,3 +51,4 @@ export class ContactComponent implements OnInit, AfterViewInit {
     );
   }
 }
+
