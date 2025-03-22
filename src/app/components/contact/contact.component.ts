@@ -3,7 +3,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from "../footer/footer.component";
 import { HttpClient } from '@angular/common/http';
-// import AOS from 'aos';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
@@ -28,18 +27,18 @@ export class ContactComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     AOS.init({
       duration: 1200,  // Animation duration in ms
-      once: true,  // Animations only run once
+      once: true,      // Animations only run once
       easing: 'ease-in-out'
     });
   }
   
   ngAfterViewInit() {
-    AOS.refreshHard();  // Use refreshHard() instead of refresh() for a better effect
+    AOS.refreshHard();  // Use refreshHard() for a better effect
   }
-  
 
   onSubmit(form: any) {
-    this.http.post('http://localhost:5000/api/contact', this.formData).subscribe(
+    // Updated URL with your Render backend
+    this.http.post('https://jainam-backend.onrender.com/api/contact', this.formData).subscribe(
       (response: any) => {
         alert(response.message);
         form.resetForm();  // Reset form after submission
@@ -51,4 +50,3 @@ export class ContactComponent implements OnInit, AfterViewInit {
     );
   }
 }
-
