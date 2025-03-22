@@ -1,32 +1,14 @@
-<!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="login-container">
-
-    <h1>Login</h1>
-
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" [(ngModel)]="formData.email" required placeholder="Enter your email">
-        <p class="error" *ngIf="loginForm.submitted && !formData.email">❌ Email is required</p>
-    </div>
-
-    <div class="form-group">
-        <label for="password">Password</label>
-        <div class="password-wrapper">
-            <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password" 
-                [(ngModel)]="formData.password" required (input)="onPasswordInput()" placeholder="Enter password">
-            <span class="toggle-password" (click)="showPassword = !showPassword">
-                <i class="fa-regular {{ showPassword ? 'fa-eye-slash' : 'fa-eye' }}"></i>
-            </span>
-        </div>
-        <div class="password-policy">
-            <p [class.valid]="passwordValidations.minLength">✔ Minimum 8 characters</p>
-            <p [class.valid]="passwordValidations.hasUppercase">✔ At least one uppercase letter</p>
-            <p [class.valid]="passwordValidations.hasLowercase">✔ At least one lowercase letter</p>
-            <p [class.valid]="passwordValidations.hasNumber">✔ At least one number</p>
-            <p [class.valid]="passwordValidations.hasSpecialChar">✔ At least one special character</p>
-        </div>
-    </div>
-
-    <button type="submit" [disabled]="loginForm.invalid">Login</button>
-</form> -->
-
-<h1 style="color: white;text-align: center;">guys login form will be coming on next weeekkkk stayy tunedd!...</h1>
+<div class="container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="loginData.email" name="email" required>
+      
+      <label>Password:</label>
+      <input type="password" [(ngModel)]="loginData.password" name="password" required>
+  
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+    <p style="color: white;">dont have an account <a routerLink="/signup">signup</a></p>
+  </div>
+  
