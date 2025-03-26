@@ -48,7 +48,8 @@ export class ContactComponent implements OnInit, AfterViewInit {
     this.successMessage = '';
     this.errorMessage = '';
 
-    const apiUrl = environment.apiUrl;   // Dynamic backend URL
+    const apiUrl = `${environment.apiUrl}/contact`;
+
 
     this.http.post(apiUrl, this.formData).subscribe(
       (response: any) => {
