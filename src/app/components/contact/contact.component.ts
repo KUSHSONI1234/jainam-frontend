@@ -3,7 +3,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from "../footer/footer.component";
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environment';  // Import environment
+import { environment } from '../environment';   // Single environment file
+
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
@@ -43,23 +44,23 @@ export class ContactComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit(form: any) {
-    this.loading = true;   // Start loader
+    this.loading = true;  
     this.successMessage = '';
     this.errorMessage = '';
 
-    const apiUrl = `${environment.apiUrl}`;  // Dynamic backend URL
+    const apiUrl = environment.apiUrl;   // Dynamic backend URL
 
     this.http.post(apiUrl, this.formData).subscribe(
       (response: any) => {
         this.loading = false; 
         this.successMessage = 'Form submitted successfully!';
-        alert('Form submitted successfully!')
-        form.resetForm();   // Reset form after success
+        alert('Form submitted successfully!');
+        form.resetForm();   
       },
       (error) => {
         this.loading = false; 
         this.errorMessage = 'Error submitting form. Please try again.';
-        console.error(error);
+        console.error('Error:', error);
       }
     );
   }
