@@ -3,11 +3,12 @@ import { KeyFeaturesComponent } from "../key-features/key-features.component";
 import { DataExtractionComponent } from "../data-extraction/data-extraction.component";
 import { FooterComponent } from "../footer/footer.component";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+import { NavbarComponent } from "../navbar/navbar.component"; 
 
 @Component({
   selector: 'app-about',
-  imports: [KeyFeaturesComponent, DataExtractionComponent, FooterComponent],
+  imports: [KeyFeaturesComponent, DataExtractionComponent, FooterComponent, NavbarComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

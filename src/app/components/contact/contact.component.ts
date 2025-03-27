@@ -3,15 +3,15 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from "../footer/footer.component";
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environment';   // Single environment file
-
+import { environment } from '../environment';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+import { NavbarComponent } from "../navbar/navbar.component"; 
 
 @Component({
   selector: 'app-contact',
-  standalone: true,  // If you're using Angular 17+ with standalone components
-  imports: [FormsModule, CommonModule, FooterComponent],
+  standalone: true,
+  imports: [FormsModule, CommonModule, FooterComponent, NavbarComponent],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
 })
@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
     message: ''
   };
 
-  loading = false;   // Loader while submitting form
+  loading = false;
   successMessage = '';
   errorMessage = '';
 
@@ -33,33 +33,36 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     AOS.init({
-      duration: 1200,  // Animation duration in ms
-      once: true,      // Animations only run once
+      duration: 1200,
+      once: true,
       easing: 'ease-in-out'
     });
   }
 
   ngAfterViewInit() {
-    AOS.refreshHard();  // Use refreshHard() for a better effect
+    AOS.refreshHard();
   }
 
   onSubmit(form: any) {
-    this.loading = true;  
+    if (form.invalid) {
+      return;
+    }
+
+    this.loading = true;
     this.successMessage = '';
     this.errorMessage = '';
 
     const apiUrl = `${environment.apiUrl}/contact`;
 
-
     this.http.post(apiUrl, this.formData).subscribe(
       (response: any) => {
-        this.loading = false; 
+        this.loading = false;
         this.successMessage = 'Form submitted successfully!';
         alert('Form submitted successfully!');
-        form.resetForm();   
+        form.resetForm();
       },
       (error) => {
-        this.loading = false; 
+        this.loading = false;
         this.errorMessage = 'Error submitting form. Please try again.';
         console.error('Error:', error);
       }

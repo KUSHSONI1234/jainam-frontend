@@ -3,11 +3,12 @@ import { TypingEffectComponent } from "../typing-effect/typing-effect.component"
 import { FooterComponent } from "../footer/footer.component";
 import { RouterLink } from '@angular/router';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+import { NavbarComponent } from "../navbar/navbar.component"; 
 
 @Component({
   selector: 'app-home',
-  imports: [TypingEffectComponent, FooterComponent,RouterLink],
+  imports: [TypingEffectComponent, FooterComponent, RouterLink, NavbarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

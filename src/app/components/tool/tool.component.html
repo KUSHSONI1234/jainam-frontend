@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Forensic Android Image Extraction Tool</h1>
+  
+    <button (click)="connectDevice()">Connect Device</button>
+    <button [disabled]="!isConnected" (click)="fetchImages()">Fetch Images</button>
+  
+    <div *ngIf="images.length > 0" class="grid-container">
+      <div *ngFor="let img of images" class="image-box">
+        <img [src]="'http://localhost:3000' + img" alt="Extracted Image" />
+        <p>{{ img.split('/').pop() }}</p>
+      </div>
+    </div>
+  </div>
+  
