@@ -1,14 +1,35 @@
 <div class="container">
-    <h1>Forensic Android Image Extraction Tool</h1>
-  
-    <button (click)="connectDevice()">Connect Device</button>
-    <button [disabled]="!isConnected" (click)="fetchImages()">Fetch Images</button>
-  
-    <div *ngIf="images.length > 0" class="grid-container">
-      <div *ngFor="let img of images" class="image-box">
-        <img [src]="'http://localhost:3000' + img" alt="Extracted Image" />
-        <p>{{ img.split('/').pop() }}</p>
-      </div>
+  <h2>📱 Android Image Browser</h2>
+
+  <button (click)="connectDevice()">🔌 Connect</button>
+  <button (click)="fetchImages()" [disabled]="!isConnected || isLoading">🖼 Fetch Images</button>
+
+  <!-- Show spinner or loading % -->
+  <div *ngIf="isLoading" class="loading-box">
+    <p>Fetching Images... {{ loadProgress }}%</p>
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="loadProgress"></div>
     </div>
   </div>
+
+  <div *ngIf="images.length > 0" class="grid-container">
+    <div *ngFor="let img of images" class="image-box">
+      <img
+        *ngIf="img" 
+        [src]="'http://localhost:3000/image?file=' + encode(img)"
+        alt="image"
+        class="preview-img"
+      />
+      <p>{{ img.split('/').pop() }}</p>
+      <button (click)="downloadImage(img)">
+        ⬇ Download
+        <span *ngIf="downloading === img">({{ downloadProgress }}%)</span>
+      </button>
+    </div>
+  </div>
+
+  <p *ngIf="hasFetched && images.length === 0 && isConnected && !isLoading">
+    No images found.
+  </p>
   
+</div>
